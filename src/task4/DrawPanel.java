@@ -42,8 +42,8 @@ public class DrawPanel extends JPanel
 //                new Vector3(0.4f, 0.4f, 0.4f)
 //        ));
         scene.getModelsList().add(new Prisma(
-                new Vector3(-0.4f, -0.4f, -0.4f),
-                0.6f,
+                new Vector3(-0.1f, -0.1f, -0.1f),
+                0.5f,
                 5, 0.2
 
         ));
