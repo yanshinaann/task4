@@ -43,9 +43,8 @@ public class DrawPanel extends JPanel
 //        ));
         scene.getModelsList().add(new Prisma(
                 new Vector3(-0.4f, -0.4f, -0.4f),
-                new Vector3(0.4f, 0.4f, 0.4f),
-                10,
-                5
+                0.6f,
+                5, 0.2
 
         ));
         camController.addRepaintListener(this);

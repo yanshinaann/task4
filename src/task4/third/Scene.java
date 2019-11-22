@@ -69,8 +69,8 @@ public class Scene {
         LinkedList<Collection<? extends IModel>> allModels = new LinkedList<>();
         allModels.add(models);
         /*Если требуется, то добавляем оси координат*/
-        if (isShowAxes())
-            allModels.add(axes);
+//        if (isShowAxes())
+//            allModels.add(axes);
         /*перебираем все полилинии во всех моделях*/
         for (Collection<? extends IModel> mc : allModels)
             for (IModel m : mc) {
