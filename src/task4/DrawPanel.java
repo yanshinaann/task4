@@ -47,7 +47,7 @@ public class DrawPanel extends JPanel
 //        ));
         scene.getModelsList().add(new Prism(
                 fun.getStartPoint(field),
-                0.5f,
+                0.2f,
                 6, 0.01, fun
 
         ));

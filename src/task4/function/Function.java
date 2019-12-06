@@ -12,7 +12,7 @@ public class Function implements IFunction {
 
     @Override
     public void update(double dt) {
-        if (angle < 6.28319) {
+        if (angle < 6.28319*3) {
            // m+=0.001;
             angle += 0.19;
         } else angle = 0;
@@ -26,7 +26,7 @@ public class Function implements IFunction {
         Vector3 v3 = new Vector3(0, 0, 0);
         // float[] a = {(float)(angle + ( f.getWeight() * Math.sin(angle))), 0, 0};
         v3.setZ(new float[]{0, 0,  (float) ((0.3 * Math.sin(angle))), 0, 0});
-        v3.setY( new float[]{0, (float) ((0.3 * Math.sin(angle))), 0});
+        v3.setX( new float[]{(float) ((0.3 * Math.cos(angle))), 0});
       //   v3.setZ(new float[]{0, 0, (float)m});
 //        if (isPoint(v2, f)) {
 //            angle = 0;

@@ -58,12 +58,13 @@ public class Prism implements IModel {
         LinkedList<Vector3> points = new LinkedList<>();
         LinkedList<Vector3> begin = new LinkedList<>();
 
-        for (int c = 0; c < n*n; c++) {
+        for (int c = 0; c < n*(n); c++) {
            //
             //begin.add(rChange);
             rBegin = function.getStartPoint(field);
+            begin.add(rBegin);
             for (int j = 0; j < n; j++) {
-               //
+                   //
                 //rChange = function.getStartPoint(field);
 
                 Vector3 vector3 = new Vector3((float)
@@ -72,20 +73,20 @@ public class Prism implements IModel {
                         rBegin.getZ());
 
                 points.add(vector3);
-                for (int i = 0; i < c; i++) {
-                    //
+                for (int i = 0; i < n*n; i++) {
+                        //
                     //rBegin = function.getStartPoint(field);
                     points.add(new Vector3((float)
-                            (rBegin.getX() + len * Math.cos(u0 + 2 * Math.PI * j / n)),
-                            (float) (rBegin.getY() + len * Math.sin(u0 + 2 * Math.PI * j / n)),
-                            rBegin.getZ()+dz ));
-                    dz += 0.01f;
+                            (rBegin.getX() + len * Math.sin(u0 + 2 * Math.PI * j / n)),
+                            (float) (rBegin.getY() + len * Math.cos(u0 + 2 * Math.PI * j / n)),
+                            rBegin.getZ()));
+                    dz += 0.1f;
                     u0 += u;
 
                 }
                 //rBegin = function.getStartPoint(field);
-               // lines.add(new PolyLine3D(points, false));
-                bottomPolygon.add(points.get(c));
+                lines.add(new PolyLine3D(points, false));
+                bottomPolygon.add(points.get(n));
                 u0 = 0;
                 dz = 0;
                 points.clear();
@@ -93,7 +94,7 @@ public class Prism implements IModel {
             }
 //            rBegin = function.getStartPoint(field);
             lines.add(new PolyLine3D(bottomPolygon, true));
-            //lines.add(new PolyLine3D(begin, false));
+            lines.add(new PolyLine3D(points, false));
             bottomPolygon.clear();
         }
 
