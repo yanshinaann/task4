@@ -25,7 +25,7 @@ public class Function implements IFunction {
         update(dt);
         Vector3 v3 = new Vector3(0, 0, 0);
         // float[] a = {(float)(angle + ( f.getWeight() * Math.sin(angle))), 0, 0};
-        v3.setX(new float[]{ (float) ((0.3 * Math.sin(angle))), 0, 0});
+        v3.setZ(new float[]{0, 0,  (float) ((0.3 * Math.sin(angle))), 0, 0});
         v3.setY( new float[]{0, (float) ((0.3 * Math.sin(angle))), 0});
       //   v3.setZ(new float[]{0, 0, (float)m});
 //        if (isPoint(v2, f)) {
