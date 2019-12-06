@@ -23,5 +23,12 @@ public class ScreenPoint {
     public int getJ() {
         return j;
     }
-    
+
+    public void setI(int i) {
+        this.i = i;
+    }
+
+    public void setJ(int j) {
+        this.j = j;
+    }
 }

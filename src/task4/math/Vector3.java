@@ -21,6 +21,15 @@ public class Vector3 {
         values = new float[]{x, y, z};
     }
 
+    public void setX(float[] values) {
+        this.values[0] = values[0];
+    }
+    public void setY(float[] values) {
+        this.values[1] = values[1];
+    }
+    public void setZ(float[] values) {
+        this.values[2] = values[2];
+    }
     /**
      * X-составляющая вектора
      * @return X-составляющая вектора

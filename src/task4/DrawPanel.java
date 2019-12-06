@@ -11,12 +11,12 @@ import java.awt.image.BufferedImage;
 import javax.swing.JPanel;
 import task4.draw.IDrawer;
 import task4.draw.SimpleEdgeDrawer;
+import task4.function.Function;
 import task4.math.Vector3;
-import task4.models.Prisma;
+import task4.models.Prism;
 import task4.screen.ScreenConverter;
 import task4.third.Camera;
 import task4.third.Scene;
-import task4.models.Parallelepiped;
 
 /**
  *
@@ -28,11 +28,15 @@ public class DrawPanel extends JPanel
     private ScreenConverter sc;
     private Camera cam;
     private CameraController camController;
+    private Function fun;
+    private Field field;
     
     public DrawPanel() {
         super();
         sc = new ScreenConverter(-1, 1, 2, 2, 1, 1);
         cam = new Camera();
+        fun = new Function();
+        field = new Field(0.3, 0.3);
         camController = new CameraController(cam, sc);
         scene = new Scene(Color.WHITE.getRGB());
         scene.showAxes();
@@ -41,12 +45,18 @@ public class DrawPanel extends JPanel
 //                new Vector3(-0.4f, -0.4f, -0.4f),
 //                new Vector3(0.4f, 0.4f, 0.4f)
 //        ));
-        scene.getModelsList().add(new Prisma(
-                new Vector3(-0.1f, -0.1f, -0.1f),
+        scene.getModelsList().add(new Prism(
+                fun.getStartPoint(field),
                 0.5f,
-                5, 0.2
+                6, 0.01, fun
 
         ));
+//        scene.getModelsList().add(new Prism(
+//                new Vector3(0, 0.5f, 0),
+//                0.5f,
+//                6, 0.1
+//
+//        ));
         camController.addRepaintListener(this);
         addMouseListener(camController);
         addMouseMotionListener(camController);
